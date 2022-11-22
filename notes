@@ -1,0 +1,34 @@
+
+
+
+basic building blocks
+
+1.module - to import 3rd party modules(root module)
+2.component- to create html,css and ts file
+
+basic commands
+
+1. ng new project_name - to create a new project_name
+2. ng g c component_name - to create a new component
+3. ng servo --open - to run angular file
+
+
+
+basic concept
+
+1. data binding : share data between components
+
+ts ---> Component 
+html ---> View
+
+        a. One way data binding (1 direction)
+           ts->html or html->ts 
+
+        a.1. component to view (ts to html)
+            i) String interpolation (1 direction) - syntax: {{expression}}  proprty in ts file and 
+            ii) property Binding -syntax : [attribute name]="property"
+        
+        a.2. View to Component (html to ts)
+            i) event binding (1 ditection) - syntax: (event_name)="function_name()";  //event- eg.buttonclick()
+            ii) event binding using (doller)$event - syntax: (event_name)="function_name($event)"
+        
