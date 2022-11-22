@@ -8,10 +8,10 @@
             <h6 >{{aim}}</h6>
             <br>
 
-             <div><input (change)="acnoChange($event)" id="log_acno" class="container-fluid mt-3" type="text" [placeholder]="account"></div>
-            <div><input  (change)="pswdChange($event)" id="log_pswd" class="container-fluid mt-3" type="text" placeholder="Password"></div>
+             <div><input #acno id="log_acno" class="container-fluid mt-3" type="text" [placeholder]="account"></div>
+            <div><input  #pswd id="log_pswd" class="container-fluid mt-3" type="text" placeholder="Password"></div>
             <div class="d-grid gap-2">
-                <input type="button" (click)="login()" value="Login" id="login" class="btn btn-primary mt-3">
+                <input type="button" (click)="login(acno,pswd)" value="Login" id="login" class="btn btn-primary mt-3">
                 <a href="./signup.html">forgot password? <br> signup</a>
             </div>
         </div>
