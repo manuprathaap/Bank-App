@@ -31,4 +31,8 @@ html ---> View
         a.2. View to Component (html to ts)
             i) event binding (1 ditection) - syntax: (event_name)="function_name()";  //event- eg.buttonclick()
             ii) event binding using (doller)$event - syntax: (event_name)="function_name($event)"
+
+        b. Two way Data Binding (Two - direction) - ts->html,html->ts
+            i)ngModel - forModule in app.module
+            syntax : - [(ngmodel)]="property_name"
         
