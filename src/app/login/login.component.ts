@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -16,18 +18,18 @@ export class LoginComponent implements OnInit {
   pswd=''
 
   //database
-  userDetails:any={
-    1000:{acno:1000,username:'manu',pswd:'1000',balance:1000},
-    1001:{acno:1001,username:'sayyid',pswd:'1001',balance:1000},
-    1002:{acno:1002,username:'abhi',pswd:'1002',balance:1000}
-  }
+  // userDetails:any={
+  //   1000:{acno:1000,username:'manu',pswd:'1000',balance:1000},
+  //   1001:{acno:1001,username:'sayyid',pswd:'1001',balance:1000},
+  //   1002:{acno:1002,username:'abhi',pswd:'1002',balance:1000}
+  // }
 
 
 
 
 
-
-  constructor() { }
+//Datadependecy injection 
+  constructor(private ds:DataService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -48,23 +50,40 @@ export class LoginComponent implements OnInit {
   //   console.log(this.pswd);
   // }
 
-  login(a:any,p:any){
-    //alert login clicked
-    var acno=a.value;
-    var pswd=p.value;
-    var userDetails=this.userDetails;
+  // login(a:any,p:any){
+  //   //alert login clicked
+  //   var acno=a.value;
+  //   var pswd=p.value;
+  //   var userDetails=this.userDetails;
 
-    if(acno in userDetails){
-      if(pswd==userDetails[acno]['pswd']){
-        alert('login successfull')
-      }
-      else{
-        alert('invalid password')
-      }
+  //   if(acno in userDetails){
+  //     if(pswd==userDetails[acno]['pswd']){
+  //       alert('login successfull')
+  //     }
+  //     else{
+  //       alert('invalid password')
+  //     }
       
+  //   }
+  //   else{
+  //     alert('invalid userDetails')
+  //   }
+  // }
+
+
+  login(){
+    //alert login clicked
+    var acno=this.acno;
+    var pswd=this.pswd;
+    var userDetails=this.ds.userDetails;
+    const result=this.ds.login(acno,pswd)
+    if(result){
+      alert("login successful")
+      this.router.navigateByUrl('dashboard')
     }
     else{
-      alert('invalid userDetails')
+      alert("login failed")
     }
   }
+
 }

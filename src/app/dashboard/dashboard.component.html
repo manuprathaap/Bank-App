@@ -1,0 +1,39 @@
+<div class="parent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a routerLink="/transaction" id="th">view transaction history</a>   
+    <h1 style="text-align:center">Welcome {{user}}</h1>
+    
+    <div class="child">
+            <div class="container  text-center mt-5" style="width:300px;" >
+                
+                <div class="container bg-light p-5" id="border">
+                    <img class ="image"src="\assets\images\download.jpg" alt="">
+                    <h4>Deposit</h4><br>
+        
+                     <div><input [(ngModel)]="acno1" name="acno1" id="acno1" class="container-fluid mt-3" type="text" placeholder="Account Number"></div>
+                     <div><input [(ngModel)]="pswd1" name="pswd1" id="pswd1" class="container-fluid mt-3" type="password" placeholder="Password"></div>
+                     <div><input [(ngModel)]="amount1" name="amount1" id="amount1" class="container-fluid mt-3" type="text" placeholder="Amount"></div>
+                    <div class="d-grid gap-2">
+                        <input (click)="deposit()" type="submit"  value="Deposit" id="Reg" class="btn btn-primary mt-3">
+                        <!-- <a href="">Sign in</a> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="child">
+        <div class="container  text-center mt-5" style="width:300px;" >
+                
+            <div class="container bg-light p-5" id="border">
+                <img class ="image"src="\assets\images\download.jpg" alt="">
+                <h4>withdraw</h4><br>
+    
+                 <div><input [(ngModel)]="acno2" name="acno2" id="acno2" class="container-fluid mt-3" type="text" placeholder="Account Number"></div>
+                 <div><input [(ngModel)]="pswd2" name="pswd2"id="pswd2" class="container-fluid mt-3" type="password" placeholder="Password"></div>
+                 <div><input [(ngModel)]="amount2" name="amount2" id="amount2" class="container-fluid mt-3" type="text" placeholder="Amount"></div>
+                <div class="d-grid gap-2">
+                    <input (click)="withdraw()" type="submit"  value="withdraw" id="Reg" class="btn btn-primary mt-3">
+                    <!-- <a href="">Sign in</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

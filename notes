@@ -36,3 +36,41 @@ html ---> View
             i)ngModel - forModule in app.module
             syntax : - [(ngmodel)]="property_name"
         
+2. Angular Routing : Yo set path for a component
+
+    syntax :    {
+                    path:"value",component:class_name
+                }
+
+                eg:
+                login
+                {
+                    path:'',Component:LoginComponent
+                }
+
+3. Dependency Injection
+
+   To share data between two dependent classes
+    syntax : constructor(private router:Router)
+
+   eg: Router Class - navigateByaUrl is used to navigate the component
+
+4. Angular Services
+  
+  to hold redundant data
+  ng g s service_name
+
+
+5. Angular Directives - To manipulate DOM
+
+        a.Component Directives(array)
+        b. Structural Directives(table)
+            1. *ngFor
+6. Angular forms
+    
+    a. Template Driven Forms(First design html page and cant do validation)
+    b. Model Driven Forms(First design model in ts  file,easy validation methods)
+            -Advanced Validation 
+            1. Reactive Forms
+            form group,array,control
+            we can directly add validation via importing reactive form module
