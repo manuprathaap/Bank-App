@@ -74,3 +74,17 @@ html ---> View
             1. Reactive Forms
             form group,array,control
             we can directly add validation via importing reactive form module
+
+7.  Local Storage
+
+        -setItem - to store data
+        -getItem - to retrive data
+        -remove item - To remove data
+
+8. Parent - child communication 
+
+        parent -> child
+        child -> parent
+
+        eg:  Dashboard -> Parent
+                delete -> Child

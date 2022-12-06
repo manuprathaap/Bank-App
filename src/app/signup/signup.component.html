@@ -5,10 +5,12 @@
             <img class ="image"src="\assets\images\download.jpg" alt="">
             <h4>My Bank</h4><br>
             <form action="" [formGroup]="registerForm">
+                <div><input formControlName="uname" id="reg_uname" class="container-fluid mt-3" type="text" placeholder="UserName"></div>
+                <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched"style="color: red;">Invalid User</div>
              <div><input formControlName="acno" id="reg_acno" class="container-fluid mt-3" type="text" placeholder="Account Number"></div>
-             <div><input formControlName="uname" id="reg_uname" class="container-fluid mt-3" type="text" placeholder="UserName"></div>
+             <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched"style="color: red;">Invalid acno</div>
              <div><input formControlName="pswd" id="reg_pswd" class="container-fluid mt-3" type="password" placeholder="Password"></div>
-            <div class="d-grid gap-2">
+            <div class="d-grid gap-2"><div *ngIf="this.registerForm.get('pswd')?.errors && this.registerForm.get('pswd')?.touched"style="color: red;">Invalid password</div>
                 <input (click)="register()" type="submit"  value="Register" id="Reg" class="btn btn-primary mt-3">
                 <a href="">Sign in</a>
             </div>

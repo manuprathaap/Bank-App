@@ -57,3 +57,7 @@
   border:1px solid  seagreen;
   box-shadow: 1px 1px 1px 1px  seagreen;
 }
+
+.style1{
+    opacity: 0;
+}

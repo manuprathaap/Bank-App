@@ -1,20 +1,23 @@
 
 <body>
     <div class="container  text-center mt-5" style="width:300px;" >
-        
+        <form action=""[formGroup]="loginForm">
         <div class="container bg-light p-5" id="border">
             <img class ="image"src="\assets\images\download.jpg" alt="">
             <h4>My Bank</h4>
             <h6 >{{aim}}</h6>
             <br>
-
-             <div><input [(ngModel)]="acno" id="log_acno" class="container-fluid mt-3" type="text" [placeholder]="account"></div>
-            <div><input  [(ngModel)]="pswd" id="log_pswd" class="container-fluid mt-3" type="text" placeholder="Password"></div>
+            
+            <div><input formControlName="acno" id="log_acno" class="container-fluid mt-3" type="text" [placeholder]="account"></div>
+            <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched"style="color: red;">Invalid User</div>
+            <div><input  formControlName="pswd" id="log_pswd" class="container-fluid mt-3" type="text" placeholder="Password"></div>
+            <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched"style="color: red;">Invalid password</div>
             <div class="d-grid gap-2">
                 <input type="button" (click)="login()" value="Login" id="login" class="btn btn-primary mt-3">
                 <a href="signup">forgot password? <br> signup</a>
             </div>
         </div>
+    </form>
 
 
     </div>
